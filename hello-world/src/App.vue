@@ -1,6 +1,11 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <h1>测试vuex</h1>
+    <p>local: {{local}}</p>
+    <p>count: {{count}}</p>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
@@ -10,7 +15,15 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  computed: {
+    count () {
+      return this.$store.state.count
+    },
+    local() {
+      return 3
+    },
+  },
 }
 </script>
 

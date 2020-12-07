@@ -5,6 +5,7 @@ module.exports = {
   devServer: {
     allowedHosts: [
       "ramwin.com"
-    ]
+    ],
+    port: 9527
   }
 }
