@@ -1,7 +1,7 @@
 <template>
   <div style="border: 1px solid red">
     我是Dict组件, 我传入了一个Object
-    <List :dict-data="dict_data"/>
+    <List :dict-data="dict_data" v-if="loaded"/>
   </div>
 </template>
 <script>
@@ -13,8 +13,14 @@ export default {
   },
   data() {
     return {
-      dict_data: {
-        1: {
+      loaded: false,
+      dict_data: {},
+    }
+  },
+  mounted() {
+    setTimeout(
+      ()=>{
+        this.dict_data[1] = {
           id: 1,
           name: "张三",
           address: {
@@ -23,9 +29,11 @@ export default {
             province: "江苏",
           }
         }
+        this.loaded = true
       },
-    }
-  }
+      1000
+    )
+  },
 }
 </script>
 
