@@ -42,7 +42,7 @@ const store = new Vuex.Store({
       }
     },
     increment_callback(context) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         setTimeout(() => {
           context.commit('increment')
           resolve()
@@ -50,7 +50,7 @@ const store = new Vuex.Store({
       })
     },
     add_todo(context) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         setTimeout(() => {
           context.commit('add_todo')
           resolve()
@@ -58,7 +58,7 @@ const store = new Vuex.Store({
       })
     },
     get_third_todo(context) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         if (context.state.todos.length >= 3) {
           resolve()
         } else {
