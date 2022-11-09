@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <h1>测试lodash对dict类型prop的读取</h1>
+    <Dict />
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>测试vuex</h1>
     <p>count: {{count}}<button @click="incr">加1</button></p>
@@ -12,16 +14,19 @@
     <p><button @click="get_third_todo()">点我先创建后获取第三条</button></p>
     <p><button @click="get_third_todo2()">点我直接获取第三条</button></p>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Dict from "./Dict"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Dict,
   },
   computed: {
     count () {
