@@ -20,6 +20,18 @@ export default {
   mounted() {
     setTimeout(
       ()=>{
+        this.loaded = true
+        this.$set(
+          this.dict_data, 2, {
+            id: 2,
+            name: "李四",
+            address: {
+              longitude: 120,
+              latitude: 23,
+              province: "上海",
+            }
+          }
+        )
         this.dict_data[1] = {
           id: 1,
           name: "张三",
@@ -29,7 +41,6 @@ export default {
             province: "江苏",
           }
         }
-        this.loaded = true
       },
       1000
     )
